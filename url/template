@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Displayname</title>
+    <meta http-equiv="Refresh" content="0; url=url_to_go" />
+  </head>
+  <body>
+    <script>
+      let url = url_to_go;
+      window.location.href = url;
+    </script>
+  </body>
+</html>
