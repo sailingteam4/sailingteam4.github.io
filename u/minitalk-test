@@ -1,1 +1,1 @@
-curl https://raw.githubusercontent.com/sailingteam4/Minitalk-Tester/main/tester.py >> tester.py && python3 tester.py
+curl https://raw.githubusercontent.com/sailingteam4/Minitalk-Tester/main/tester.py > tester.py && python3 tester.py
