@@ -1,9 +1,165 @@
-<!doctype html>
-<html>
-  <head>
-    <title>This is the title of the webpage!</title>
-  </head>
-  <body>
-    <p>hehe</p>
-  </body>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="https://i.ibb.co/ZKfKBzh/pngegg.png">
+    <title>Rontey Nathan</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: url('bg.png') no-repeat center center fixed;
+            background-size: cover;
+            font-family: 'Arial', sans-serif;
+            overflow: hidden;
+            color: #e0e0e0;
+            perspective: 1000px;
+        }
+        body::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: inherit;
+            filter: blur(10px);
+            z-index: -1;
+        }
+        .card-container {
+            transition: transform 0.1s ease;
+            transform-style: preserve-3d;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .card {
+            background-color: rgba(0, 0, 0, 0.2);
+            backdrop-filter: blur(20px);
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.7);
+            text-align: center;
+            max-width: 350px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            width: 100%;
+        }
+        .card img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 20px;
+            border: 3px solid #e0e0e0;
+        }
+        .card h1 {
+            margin: 0;
+            color: #ffffff;
+            font-size: 28px;
+        }
+        .card p {
+            color: #ffffff;
+            margin: 10px 0;
+            font-size: 16px;
+        }
+        .card a {
+            color: #4db8ff;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        .card a:hover {
+            color: #5dbeff;
+        }
+        .button {
+            display: inline-block;
+            margin: 10px 0;
+            padding: 10px 20px;
+            background-color: #4db8ff;
+            color: #000000; /* Change text color to black for better readability */
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            box-sizing: border-box; /* Include padding and border in the element's total width and height */
+        }
+        .button:hover {
+            background-color: #0099ff;
+        }
+        @media (max-width: 768px) {
+            .card {
+                padding: 20px;
+                max-width: 90%;
+            }
+            .card img {
+                width: 120px;
+                height: 120px;
+            }
+            .card h1 {
+                font-size: 24px;
+            }
+            .card p {
+                font-size: 14px;
+            }
+        }
+        @media (max-width: 480px) {
+            .card {
+                padding: 15px;
+                max-width: 95%;
+            }
+            .card img {
+                width: 100px;
+                height: 100px;
+            }
+            .card h1 {
+                font-size: 22px;
+            }
+            .card p {
+                font-size: 12px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="card-container">
+        <div class="card">
+            <img src="me.jpg" alt="Rontey Nathan">
+            <h1>Rontey Nathan</h1>
+            <p>Etudiant en informatique</p>
+            <p>19 ans</p>
+            <p>42 Angouleme</p>
+            <a href="https://contact.nathaan.me/"><button class="button">📞 Contact</button></a>
+			<a href="https://github.com/sailingteam4"><button class="button">🛠️ Projets</button></a>
+        </div>
+    </div>
+
+    <script>
+        const cardContainer = document.querySelector('.card-container');
+
+        // Mouse-follow effect
+        document.addEventListener('mousemove', (e) => {
+            const rect = cardContainer.getBoundingClientRect();
+            const centerX = rect.left + rect.width / 2;
+            const centerY = rect.top + rect.height / 2;
+
+            const deltaX = (e.clientX - centerX) / window.innerWidth;
+            const deltaY = (e.clientY - centerY) / window.innerHeight;
+
+            const tiltX = deltaY * 30; // Adjust this value to increase/decrease tilt
+            const tiltY = -deltaX * 30; // Adjust this value to increase/decrease tilt
+
+            cardContainer.style.transform = `rotateX(${tiltX}deg) rotateY(${tiltY}deg)`;
+        });
+
+        // Reset card position when mouse leaves the window
+        document.addEventListener('mouseleave', () => {
+            cardContainer.style.transform = 'rotateX(0deg) rotateY(0deg)';
+        });
+    </script>
+</body>
 </html>
