@@ -2,55 +2,72 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta content="CLIQUE LUCA" property="og:title" />
+        <meta content="clique" property="og:title" />
         <meta content="bon vzy clique" property="og:description" />
         <meta content="https://nathaan.me/u/luca/" property="og:url" />
         <meta
             content="https://nathaan.me/u/luca/img/logo.png"
-            property="og:image"
+            property="og:iamage"
         />
         <meta content="#ff0000" data-react-helmet="true" name="theme-color" />
-        <title>Camaieu Design Competition</title>
         <link
             rel="icon"
             type="image/x-icon"
             href="https://upload.wikimedia.org/wikipedia/commons/8/8b/Red_Circle_full.png"
         />
+        <title>be your camaïeu - Printemps-Été 2026</title>
         <style>
             * {
                 margin: 0;
                 padding: 0;
                 box-sizing: border-box;
-                font-family: "Arial", sans-serif;
+                font-family: sans-serif;
             }
 
             :root {
-                --primary-red: #ff4d4d;
-                --primary-orange: #ff9933;
-                --primary-yellow: #ffd700;
+                --primary-green: #98c1a2;
+                --primary-blue: #87ceeb;
+                --primary-pink: #ffb6c1;
+                --primary-coral: #f08080;
             }
 
             body {
-                background: linear-gradient(135deg, #f6f6f6, #e9e9e9);
-                background-attachment: fixed;
+                background: #f8f8f8;
+                background-image: linear-gradient(
+                        rgba(64, 64, 64, 0.1) 1px,
+                        transparent 1px
+                    ),
+                    linear-gradient(
+                        90deg,
+                        rgba(64, 64, 64, 0.1) 1px,
+                        transparent 1px
+                    );
+                background-size: 20px 20px;
                 position: relative;
             }
 
             body::before {
-                content: "";
+                content: "✻";
                 position: absolute;
                 top: 0;
                 left: 0;
                 right: 0;
                 bottom: 0;
-                background: url('data:image/svg+xml,<svg width="20" height="20" xmlns="http://www.w3.org/2000/svg"><rect width="20" height="20" fill="none" stroke="%23ddd" stroke-width="1"/></svg>');
+                font-size: 20px;
+                color: rgba(255, 255, 255, 0.2);
                 opacity: 0.5;
                 z-index: -1;
                 pointer-events: none;
             }
 
             header {
-                background: linear-gradient(to right, #2c3e50, #3498db);
+                background: linear-gradient(
+                    135deg,
+                    var(--primary-green),
+                    var(--primary-blue),
+                    var(--primary-pink),
+                    var(--primary-coral)
+                );
                 color: white;
                 text-align: center;
                 padding: 3rem 2rem;
@@ -61,33 +78,24 @@
             }
 
             header::after {
-                content: "";
+                content: "✻";
                 position: absolute;
                 top: 0;
                 left: 0;
                 right: 0;
                 bottom: 0;
-                background: linear-gradient(
-                    45deg,
-                    rgba(255, 255, 255, 0.1) 25%,
-                    transparent 25%,
-                    transparent 50%,
-                    rgba(255, 255, 255, 0.1) 50%,
-                    rgba(255, 255, 255, 0.1) 75%,
-                    transparent 75%,
-                    transparent
-                );
-                background-size: 50px 50px;
-                animation: move-bg 3s linear infinite;
+                font-size: 50px;
+                color: rgba(255, 255, 255, 0.1);
+                animation: rotate 3s linear infinite;
                 opacity: 0.3;
             }
 
-            @keyframes move-bg {
-                0% {
-                    background-position: 0 0;
+            @keyframes rotate {
+                from {
+                    transform: rotate(0deg);
                 }
-                100% {
-                    background-position: 50px 50px;
+                to {
+                    transform: rotate(360deg);
                 }
             }
 
@@ -177,7 +185,7 @@
             }
 
             .vote-btn {
-                background: var(--primary-orange);
+                background: var(--primary-blue);
                 color: white;
                 border: none;
                 padding: 0.5rem 1.5rem;
@@ -187,7 +195,7 @@
             }
 
             .vote-btn:hover {
-                background: var(--primary-red);
+                background: var(--primary-coral);
             }
 
             .vote-btn.voted {
@@ -197,7 +205,7 @@
 
             .vote-count {
                 font-weight: bold;
-                color: var(--primary-red);
+                color: var(--primary-coral);
             }
 
             @media (max-width: 768px) {
@@ -213,18 +221,21 @@
             <div class="logo">
                 <img
                     src="img/logo.png"
-                    alt="CAMAIEU"
+                    alt="be your camaïeu"
                     style="width: 300px; height: auto"
                 />
             </div>
-            <h1>Competition de Design 2024</h1>
+            <h1>be <i>your</i> camaïeu - 2026</h1>
         </header>
 
         <div class="competition-intro">
             <p>
-                Découvrez les créations exceptionnelles de nos designers et
-                votez pour votre préféré. Chaque vote compte dans cette
-                célébration de la créativité et de l'innovation en mode.
+                Découvrez notre collection Printemps-Été 2026, une célébration
+                de l'individualité et de l'expression personnelle. Une palette
+                de couleurs douces qui ont été soigneusement utilisées par des
+                individus talentueux pour créer des designs uniques et
+                inspirants. Votez pour votre design préféré et aidez-nous à le
+                mettre en avant !
             </p>
         </div>
 
